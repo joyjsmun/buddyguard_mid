@@ -84,7 +84,11 @@ export default function App() {
         {/* Profile */}
         <Stack.Screen name="Profile" component={Profile} />
         {/* Map */}
-        <Stack.Screen name="Map" component={Map} />
+        <Stack.Screen
+          name="Map"
+          component={Map}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
 
       {/* Group tabs */}

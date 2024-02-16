@@ -1,26 +1,78 @@
-import React, {useLayoutEffect, useState, useRef} from 'react';
+import React, {Component} from 'react';
 import {View, Text, Image} from 'react-native';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import {SearchBar, Button} from '@rneui/themed';
 import {search, undo} from '../assets/images';
 import Geolocation from '@react-native-community/geolocation';
 
-const getMyLocation = (mapRef, setRegion) => {
-  Geolocation.getCurrentPosition(loc => {
-    mapRef.current.animateToRegion({
-      latitude: loc.coords.latitude,
-      longitude: loc.coords.longitude,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
+// let eventData = [
+//   {
+//     id:"1",
+//     name:"ZuSocial",
+//     img:"",
+//     latitude
+//   }
+// ]
+
+class Map extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      latitude: 41.38707262727212,
+      longitude: 2.1700450041329127,
+      events: [],
+      searchSting: '',
+      distance: 40,
+      selectedPlace: null,
+      region: {
+        latitude: 41.3851,
+        longitude: 2.1734,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      },
+    };
+    this.mapRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.getMyLocation();
+  }
+
+  getMyLocation = () => {
+    Geolocation.getCurrentPosition(loc => {
+      this.mapRef.current.animateToRegion({
+        latitude: loc.coords.latitude,
+        longitude: loc.coords.longitude,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      });
+      this.setState({
+        latitude: loc.coords.latitude,
+        longitude: loc.coords.longitude,
+        region: {
+          latitude: loc.coords.latitude,
+          longitude: loc.coords.longitude,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        },
+      });
     });
-    setRegion({
-      latitude: loc.coords.latitude,
-      longitude: loc.coords.longitude,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
-    });
-  });
-};
+  };
+
+  render() {
+    return (
+      <View className="flex-1 justify-center  w-full ">
+        <MapView
+          className="flex-1"
+          provider={PROVIDER_GOOGLE}
+          ref={this.mapRef}
+          initialRegion={this.state.region}
+        />
+        <SearchSection />
+      </View>
+    );
+  }
+}
 
 const SearchSection = () => {
   return (
@@ -88,34 +140,4 @@ const SearchSection = () => {
   );
 };
 
-export default function Map() {
-  const [region, setRegion] = useState({
-    latitude: 37.78825,
-    longitude: -122.4324,
-    latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421,
-  });
-  const mapRef = useRef(null);
-
-  useLayoutEffect(() => {
-    // Hide header
-  }, []);
-
-  useLayoutEffect(() => {
-    if (mapRef.current) {
-      getMyLocation(mapRef, setRegion);
-    }
-  }, []);
-
-  return (
-    <View style={{flex: 1, width: '100%'}} className="flex-1 relative w-full ">
-      <MapView
-        style={{flex: 1}}
-        provider={PROVIDER_GOOGLE}
-        ref={mapRef}
-        initialRegion={region}
-      />
-      <SearchSection />
-    </View>
-  );
-}
+export default Map;
