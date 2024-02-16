@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React, {useLayoutEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {Hangout1, Hangout3, Map, inbox} from '../assets/images';
+import {Hangout1, Hangout3, Map, inbox, sos} from '../assets/images';
 import SwipeButton from '../components/SwipeButton';
 
 const Home = () => {
@@ -29,19 +29,31 @@ const Home = () => {
             <Text className="text-[#121418] font-semibold text-base">
               Gm, Joy
             </Text>
-            <TouchableOpacity
-              onPress={() => navigation.navigate('AcceptRequest')}>
-              <Image source={inbox} className="w-10 h-10 mr-1" />
-            </TouchableOpacity>
+            <View className="flex flex-row space-x-3">
+              <TouchableOpacity
+                onPress={() => navigation.navigate('AcceptRequest')}>
+                <Image source={inbox} className="w-12 h-12 mr-1" />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('AcceptRequest')}>
+                <View className="w-12 h-12 ml-3 bg-red-500 rounded-2xl flex justify-center items-center">
+                  <Text className="text-white font-bold">SOS</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           {/* Explore Your Neighborhood*/}
           <View className="flex space-y-2">
             <Text className="text-[#121418] font-medium text-lg">
               Explore Your Neighborhood
             </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('Map')}>
-              <Image className="w-full h-40  mb-2 rounded-lg" source={Map} />
-            </TouchableOpacity>
+            <View className="bg-blue-500 p-1 z-0 rounded-lg ">
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Map')}
+                className="z-50">
+                <Image className="w-full h-40   rounded-lg" source={Map} />
+              </TouchableOpacity>
+            </View>
           </View>
           {/* Upcoming Events*/}
           <View className="flex space-y-2">

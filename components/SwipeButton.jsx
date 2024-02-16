@@ -16,7 +16,7 @@ const SwipeButton = () => {
         className="bg-[#FF5757]"
         style={{
           width: '98%',
-          height: 60,
+          height: 50,
           justifyContent: 'center',
           alignItems: 'center',
           borderRadius: 25,

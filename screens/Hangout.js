@@ -17,7 +17,6 @@ import {
   plus,
 } from '../assets/images';
 import SwipeButton from '../components/SwipeButton';
-import {Icon} from '@rneui/themed';
 
 const Hangout = () => {
   const navigation = useNavigation();
@@ -36,7 +35,7 @@ const Hangout = () => {
               className="flex-row"
               onPress={() => navigation.navigate('Setting')}>
               <View className="flex flex-row items-center">
-                <Image source={pin} className="w-8 h-8" />
+                <Image source={pin} className="w-6 h-6 mr-2" />
                 <Text className="text-[#121418] font-medium text-base ">
                   Current Location : Bali
                 </Text>

@@ -56,7 +56,7 @@ const Profile = () => {
         <View className="pt-4 px-4 flex space-y-4 ">
           {/* Top Section */}
           <View className="flex space-y-2 ">
-            <View className="flex justify-center items-center w-100 h-50 p-8 bg-white rounded-xl relative">
+            <View className="flex justify-center items-center w-100 h-50 px-8 py-6 bg-white rounded-xl relative">
               {/* barcode img */}
               <TouchableOpacity
                 className="absolute top-2 right-3 "
