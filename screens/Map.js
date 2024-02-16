@@ -1,9 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 import {useNavigation} from '@react-navigation/native';
 import React, {useLayoutEffect} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import {Icon, SearchBar, Button} from '@rneui/themed';
+import {search, undo} from '../assets/images';
 
 const SearchSection = () => {
   return (
@@ -30,7 +31,7 @@ const SearchSection = () => {
             marginHorizontal: 2,
           }}>
           <Text className="font-bold mr-2 text-white text-lg p-1 ">Reset</Text>
-          <Icon name="refresh" color="white" />
+          <Image source={undo} className="w-8 h-8" />
         </Button>
         <Button
           onPress={() => {}}
@@ -40,7 +41,7 @@ const SearchSection = () => {
             marginHorizontal: 2,
           }}>
           <Text className="font-bold mr-2 text-white text-lg p-1 ">Search</Text>
-          <Icon name="search" color="white" />
+          <Image source={search} className="w-8 h-8" />
         </Button>
       </View>
     </View>

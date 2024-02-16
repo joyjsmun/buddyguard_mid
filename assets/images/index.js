@@ -64,6 +64,7 @@ export {default as timer} from './Icons/timer.png';
 export {default as yes} from './Icons/yes.png';
 export {default as no} from './Icons/no.png';
 export {default as sos} from './Icons/sos.png';
+export {default as undo} from './Icons/undo.png';
 
 export {default as where} from './Icons/where.png';
 export {default as when} from './Icons/when.png';
