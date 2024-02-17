@@ -37,7 +37,7 @@ const WalkStatus = () => {
   }, []);
 
   return (
-    <SafeAreaView className="bg-[#F6D268] flex-1 relative">
+    <SafeAreaView className="bg-[#F2F2F2] flex-1 relative">
       <ScrollView contentContainerStyle={{padding: 12, paddingBottom: 60}}>
         <View className="pt-4 px-4 flex space-y-4 ">
           {/* Walk to home detail */}
@@ -51,7 +51,7 @@ const WalkStatus = () => {
           </View>
           {/* Card Section */}
           {/* Status */}
-          <View className="rounded-lg bg-[#F2F2F2] p-4 flex space-y-6">
+          <View className="rounded-lg border-[#F6D268] border-4 p-4 flex space-y-6">
             {/* tags */}
 
             <View className="flex space-y-2">

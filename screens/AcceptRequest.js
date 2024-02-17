@@ -22,7 +22,7 @@ const AcceptRequest = () => {
   }, [navigation]);
 
   return (
-    <SafeAreaView className="bg-[#F6D268] flex-1 relative">
+    <SafeAreaView className="bg-white flex-1 relative">
       <ScrollView contentContainerStyle={{padding: 12, paddingBottom: 60}}>
         <View className="pt-4 px-4 flex space-y-4 ">
           {/* Top Section */}
@@ -36,7 +36,7 @@ const AcceptRequest = () => {
             <Text className="text-[#121418] font-bold text-xl mt-2">
               Accept Buddy-Guard Request
             </Text>
-            <View className="rounded-lg bg-[#fff] p-4 flex space-y-6">
+            <View className="rounded-lg  px-2 py-5 flex space-y-6">
               {/* Card Section */}
               {/* User Info */}
               <View className="flex flex-row items-center ml-2">
@@ -45,22 +45,22 @@ const AcceptRequest = () => {
                   <View className=" flex space-y-2">
                     <View className="w-full h-16  flex-row justify-start  items-center    ">
                       <Image source={group2} className="w-12 h-12" />
-                      <Text className="text-base font-medium ml-8">
+                      <Text className="text-base font-medium ml-4">
                         ZuSocial Group{' '}
                       </Text>
                     </View>
                     <Text className="font-bold text-base">Reward</Text>
                     <View className="w-full h-16  flex-row justify-start  items-center    ">
                       <Image source={coin} className="w-12 h-12" />
-                      <Text className="text-base font-medium ml-8">
+                      <Text className="text-base font-medium ml-4">
                         10 BG token / 20 mins duration
                       </Text>
                     </View>
                     <Text className="font-bold text-base">Location</Text>
                     <View className="w-full h-16  flex-row justify-start  items-center    ">
                       <Image source={pin2} className="w-12 h-12" />
-                      <Text className="text-base font-medium ml-8">
-                        C/ de Mallorca, 401, L'Eixample, 08013 Barcelona, Spain
+                      <Text className="text-base font-medium ml-4">
+                        C/ de Mallorca, 08013 Barcelona, Spain
                       </Text>
                     </View>
                   </View>

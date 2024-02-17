@@ -23,7 +23,7 @@ const WalkRequestInfo = () => {
   }, []);
 
   return (
-    <SafeAreaView className="bg-[#F6D268] flex-1 relative">
+    <SafeAreaView className="bg-[#F2F2F2] flex-1 relative">
       <ScrollView contentContainerStyle={{padding: 12, paddingBottom: 60}}>
         <View className="pt-4 px-4 flex space-y-4 ">
           {/* Top Section */}
@@ -32,12 +32,15 @@ const WalkRequestInfo = () => {
               Where Do You Wanna Go?
             </Text>
             <TouchableOpacity onPress={() => navigation.navigate('Hangout')}>
-              <Image className="w-full h-40  mb-2 rounded-lg" source={Map} />
+              <Image
+                className="w-[94%] h-40 self-center  mb-2 rounded-lg border-2 border-gray-300"
+                source={Map}
+              />
             </TouchableOpacity>
           </View>
           {/* Card Section */}
           <View className="flex space-y-2">
-            <View className="rounded-lg bg-[#fff] p-4 flex space-y-6">
+            <View className="rounded-lg bg-white  p-4 flex space-y-6">
               {/* Card Section */}
               {/* Choose Buddy */}
               <View className="flex flex-row items-center ml-2">
@@ -78,7 +81,7 @@ const WalkRequestInfo = () => {
                 <View
                   style={{
                     backgroundColor: '#4F9171',
-                    width: '98%',
+                    width: '100%',
                     height: 60,
                     justifyContent: 'center',
                     alignItems: 'center',

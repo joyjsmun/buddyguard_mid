@@ -22,7 +22,7 @@ const Home = () => {
   }, []);
 
   return (
-    <SafeAreaView className="bg-yellow-50 flex-1 relative">
+    <SafeAreaView className="bg-white flex-1 relative">
       <ScrollView contentContainerStyle={{padding: 12, paddingBottom: 60}}>
         <View className="pt-9 px-4 flex space-y-4 ">
           <View className="flex-row justify-between items-center">

@@ -77,7 +77,7 @@ const SafetyTimer = () => {
 
   animateCircles();
   return (
-    <SafeAreaView className="bg-[#F6D268] flex-1 relative">
+    <SafeAreaView className="bg-[#F2F2F2] flex-1 relative">
       <ScrollView contentContainerStyle={{padding: 12, paddingBottom: 60}}>
         <View className="pt-4 px-4 flex space-y-4 ">
           {/* Safety Time Countdown */}

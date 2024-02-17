@@ -112,7 +112,7 @@ const HangoutSwipe = () => {
   };
 
   return (
-    <SafeAreaView className="bg-[#F6D268] flex-1 relative">
+    <SafeAreaView className="bg-white flex-1 relative">
       <ScrollView contentContainerStyle={{padding: 12, paddingBottom: 60}}>
         <View className="pt-9 px-4 flex space-y-4 ">
           {/* Top Section */}
@@ -133,7 +133,7 @@ const HangoutSwipe = () => {
             <View className="flex-3 justify-center items-center w-full ">
               <Animated.View
                 style={{transform: [{scale: secondScale}]}}
-                className=" w-[83vw] h-[55vh] justify-center items-center shadow-lg absolute top-1">
+                className=" w-[83vw] h-[55vh] justify-center items-center shadow-lg absolute top-1 ">
                 <ImageBackground
                   source={hangoutImages[index + 1]}
                   className="w-full h-full  "
@@ -159,7 +159,7 @@ const HangoutSwipe = () => {
                 {/* <Ionicons name={icons[index]} color="#192a56" size={98} /> */}
                 <ImageBackground
                   source={hangoutImages[index]}
-                  className="w-full h-full   "
+                  className="w-full h-full   border border-blue-400"
                   style={{
                     borderRadius: 12,
                     overflow: 'hidden', // Ensure the border radius is applied
@@ -172,7 +172,7 @@ const HangoutSwipe = () => {
             <View className="flex justify-center items-center  w-full h-60 top-14 ">
               {/* hangout title */}
               <View className="absolute top-52  w-full px-4 ">
-                <Text className="text-4xl font-bold text-white text-left">
+                <Text className="text-4xl font-bold text-gray-200 text-left">
                   Beach Volleyball
                 </Text>
               </View>
@@ -198,10 +198,10 @@ const HangoutSwipe = () => {
               </View>
               {/* Date and number of people */}
               <View className="absolute top-72 mt-4 flex flex-row justify-between items-center w-full px-6">
-                <Text className="text-base font-bold text-white">
+                <Text className="text-base font-bold  text-gray-200">
                   2024/02/21
                 </Text>
-                <Text className="text-base font-bold text-white">
+                <Text className="text-base font-bold  text-gray-200">
                   5/10 People
                 </Text>
               </View>

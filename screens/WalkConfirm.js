@@ -29,21 +29,19 @@ const WalkConfirm = () => {
   }, []);
 
   return (
-    <SafeAreaView className="bg-[#F6D268] flex-1 relative">
+    <SafeAreaView className="bg-[#F2F2F2] flex-1 relative">
       <ScrollView contentContainerStyle={{padding: 12, paddingBottom: 60}}>
         <View className="pt-4 px-4 flex space-y-4 ">
           {/* Top Section */}
           <View className="flex space-y-2">
-            <Text className="text-[#E5E7ED] font-medium text-lg">
-              Where Do You Wanna Go?
-            </Text>
+            <Text className="font-medium text-lg">Where Do You Wanna Go?</Text>
             <TouchableOpacity onPress={() => navigation.navigate('Hangout')}>
               <Image className="w-full h-40  mb-1 rounded-lg" source={Map} />
             </TouchableOpacity>
           </View>
           {/* Card Section */}
           <View className="flex ">
-            <View className="rounded-lg bg-[#fff] p-4 flex space-y-3">
+            <View className="rounded-lg border-[#F6D268] border-4 p-4 flex space-y-3">
               {/* Card Section */}
 
               <View className="flex flex-row items-center ml-2">
