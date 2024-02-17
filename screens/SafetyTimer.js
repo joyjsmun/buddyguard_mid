@@ -153,7 +153,9 @@ const SafetyTimer = () => {
               <View className=" rounded-3xl bg-[#dcd9e2] px-4 py-4 flex flex-row items-center space-x-2">
                 <Image source={pin2} className="w-10 h-10" />
 
-                <Text className="text-base"> 2321st, Bogota, Columbia</Text>
+                <Text className="text-base">
+                  C/ de Mallorca, 401, L'Eixample, 08013 Barcelona, Spain
+                </Text>
               </View>
             </View>
             {isSafetyTimeModal && (
@@ -173,10 +175,11 @@ const SafetyTimer = () => {
                     Contact Number : 987-232-1829
                   </Text>
                   <Text className="font-bold">
-                    Last Location: 1212st, Bogota, Colombia
+                    Last Location: Carrer de la Marina, 19, 21, Ciutat Vella,
+                    08005 Barcelona, Spain
                   </Text>
                   <Text className="font-bold">
-                    Personal Contact: 987)456-1877
+                    Friend, Personal Contact: +82-10-1877-2322
                   </Text>
                 </View>
                 <View className="my-3">

@@ -1,18 +1,58 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {View, Text, Image} from 'react-native';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import MapView, {Callout, Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import {SearchBar, Button} from '@rneui/themed';
 import {search, undo} from '../assets/images';
 import Geolocation from '@react-native-community/geolocation';
 
-// let eventData = [
-//   {
-//     id:"1",
-//     name:"ZuSocial",
-//     img:"",
-//     latitude
-//   }
-// ]
+const hangoutData = [
+  {
+    id: '1',
+    title: 'Arco de Triunfo de Barcelona',
+    group: 'ZuSocial',
+    time: 'Today, 10AM',
+    image: require('../assets/images/arco.png'),
+    latitude: 41.39218782850737,
+    longitude: 2.1833596091062,
+  },
+  {
+    id: '2',
+    title: 'Visit Casa Mila',
+    group: 'RamenDAO',
+    time: 'Today, 1PM',
+    image: require('../assets/images/casa.png'),
+    latitude: 41.39482777666461,
+    longitude: 2.1613869520476627,
+  },
+  {
+    id: '3',
+    title: 'Tour La Sagrada Familia',
+    group: 'HER DAO',
+    time: 'Today, 4PM',
+    image: require('../assets/images/sagrada.png'),
+    latitude: 41.40438064044464,
+    longitude: 2.1785255205402874,
+  },
+  {
+    id: '4',
+    title: 'Night Tour - Magic Fountain of Montjuïc',
+    group: 'Web3 Nomads',
+    time: 'Today, 8PM',
+    image: require('../assets/images/fountain.png'),
+    latitude: 41.3712561906769,
+    longitude: 2.151748397811569,
+  },
+  {
+    id: '5',
+    title: 'Night Tennis',
+    group: 'Web3 Nomads',
+    time: 'Today, 9PM',
+    image: require('../assets/images/hangout5.png'),
+    latitude: 41.380985812152396,
+    longitude: 2.162306965964739,
+  },
+];
 
 class Map extends Component {
   constructor(props) {
@@ -30,11 +70,15 @@ class Map extends Component {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       },
+      hangouts: [], // Initialize hangouts as an empty array
     };
     this.mapRef = React.createRef();
   }
 
   componentDidMount() {
+    this.setState({
+      hangouts: hangoutData,
+    });
     this.getMyLocation();
   }
 
@@ -61,13 +105,42 @@ class Map extends Component {
 
   render() {
     return (
-      <View className="flex-1 justify-center  w-full ">
-        <MapView
-          className="flex-1"
-          provider={PROVIDER_GOOGLE}
-          ref={this.mapRef}
-          initialRegion={this.state.region}
-        />
+      <View style={{flex: 1}}>
+        {this.state.hangouts.length > 0 && (
+          <MapView
+            style={{flex: 1}}
+            provider={PROVIDER_GOOGLE}
+            ref={this.mapRef}
+            initialRegion={this.state.region}>
+            {this.state.hangouts.map(iHangout => (
+              <Marker
+                key={iHangout.id}
+                coordinate={{
+                  latitude: iHangout.latitude,
+                  longitude: iHangout.longitude,
+                }}>
+                <Callout
+                  className="w-40 h-auto"
+                  onPress={() => {
+                    this.setState({selectedPlace: iHangout});
+                  }}>
+                  <View className="flex space-y-1 ">
+                    <Text className="font-bold">{iHangout.title}</Text>
+                    <Text className="text-sm">Time : {iHangout.time}</Text>
+                    <Text className="text-sm">Group : {iHangout.group}</Text>
+                    <Image
+                      className="w-[96%] h-28 self-center "
+                      source={iHangout.image}
+                    />
+                    <Text style={{fontStyle: 'italic'}}>
+                      Tap for more details
+                    </Text>
+                  </View>
+                </Callout>
+              </Marker>
+            ))}
+          </MapView>
+        )}
         <SearchSection />
       </View>
     );

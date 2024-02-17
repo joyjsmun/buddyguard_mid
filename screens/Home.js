@@ -22,7 +22,7 @@ const Home = () => {
   }, []);
 
   return (
-    <SafeAreaView className="bg-[#F6D268] flex-1 relative">
+    <SafeAreaView className="bg-yellow-50 flex-1 relative">
       <ScrollView contentContainerStyle={{padding: 12, paddingBottom: 60}}>
         <View className="pt-9 px-4 flex space-y-4 ">
           <View className="flex-row justify-between items-center">
@@ -47,7 +47,7 @@ const Home = () => {
             <Text className="text-[#121418] font-medium text-lg">
               Explore Your Neighborhood
             </Text>
-            <View className="bg-blue-500 p-1 z-0 rounded-lg ">
+            <View className="bg-gray-200 p-1 z-0 rounded-lg ">
               <TouchableOpacity
                 onPress={() => navigation.navigate('Map')}
                 className="z-50">

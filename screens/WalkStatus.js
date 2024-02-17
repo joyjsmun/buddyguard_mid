@@ -68,7 +68,9 @@ const WalkStatus = () => {
               </View>
               <View className=" rounded-3xl bg-[#dcd9e2] px-4 py-4 flex flex-row items-center space-x-2">
                 <Image source={pin2} className="w-10 h-10" />
-                <Text className="text-base"> 2321st, Bogota, Columbia</Text>
+                <Text className="text-base">
+                  C/ de Mallorca, 401, L'Eixample, 08013 Barcelona, Spain
+                </Text>
               </View>
             </View>
             {isSosModal && (

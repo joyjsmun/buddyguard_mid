@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import React, {useLayoutEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {Map} from '../assets/images';
+import {Map, coin, group, group2, pin2} from '../assets/images';
 import {Icon} from '@rneui/themed';
 
 const AcceptRequest = () => {
@@ -44,38 +44,23 @@ const AcceptRequest = () => {
                   <Text className="font-bold text-base">User Info</Text>
                   <View className=" flex space-y-2">
                     <View className="w-full h-16  flex-row justify-start  items-center    ">
-                      <Icon
-                        type="material"
-                        name="groups"
-                        size={40}
-                        color={'#121418'}
-                      />
+                      <Image source={group2} className="w-12 h-12" />
                       <Text className="text-base font-medium ml-8">
                         ZuSocial Group{' '}
                       </Text>
                     </View>
                     <Text className="font-bold text-base">Reward</Text>
                     <View className="w-full h-16  flex-row justify-start  items-center    ">
-                      <Icon
-                        type="font-awesome-5"
-                        name="coins"
-                        size={34}
-                        color={'#121418'}
-                      />
+                      <Image source={coin} className="w-12 h-12" />
                       <Text className="text-base font-medium ml-8">
                         10 BG token / 20 mins duration
                       </Text>
                     </View>
                     <Text className="font-bold text-base">Location</Text>
                     <View className="w-full h-16  flex-row justify-start  items-center    ">
-                      <Icon
-                        name="location"
-                        size={34}
-                        color={'#121418'}
-                        type="entypo"
-                      />
+                      <Image source={pin2} className="w-12 h-12" />
                       <Text className="text-base font-medium ml-8">
-                        1213st, Bogota, Colombia
+                        C/ de Mallorca, 401, L'Eixample, 08013 Barcelona, Spain
                       </Text>
                     </View>
                   </View>
